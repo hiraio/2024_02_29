@@ -72,10 +72,20 @@ public class JDBCMain01 {
 			int result = stmt.executeUpdate(sql_insert);
 			// 8. DB 서버가 보낸 결과 처리/확인
 			System.out.println(result);
+			
+		
 		
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 
 		
